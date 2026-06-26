@@ -1,7 +1,7 @@
 # pluto-fmcw-radar
-A short-range FMCW radar built around an custom PlutoSDR with two self-designed Yagi antennae. The system generates a linear frequency modulated chirp, transmits and receives through the antennae, and processes the returns in Python to produce range and range Doppler maps. A Pi 4B is included to run the python script and publishes the result online to avoid moving computers.
+A short-range FMCW radar built around a custom PlutoSDR with two self-designed Yagi antennae. The system generates a linear frequency modulated chirp, transmits and receives through the antennae, and processes the returns in Python to produce range and range Doppler maps. A Pi 4B is included to run the python script and publishes the result online to avoid moving computers.
 
-Currently the dechip step is done by the Pi 4B, and the sample rate is limited by the Ethernet cable. I'm trying to move the dechirp into the custom PlutoSDR's on-board FPGA (Zynq 7020) to push toward wider bandwidth (target 60 MHz, the maximum sample rate of AD9361).
+Currently the dechirp step is done by the Pi 4B, and the sample rate is limited by the Ethernet cable. I'm trying to move the dechirp into the custom PlutoSDR's on-board FPGA (Zynq 7020) to push toward wider bandwidth (target 60 MHz, the maximum sample rate of AD9361).
 
 Vivado 2022.2 source code of this custom PlutoSDR.
 https://github.com/Xiaozhang-code-cloud/Fish-Wan-plutosdr-fw-7020-SDR.git
