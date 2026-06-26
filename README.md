@@ -9,7 +9,7 @@ https://github.com/Xiaozhang-code-cloud/Fish-Wan-plutosdr-fw-7020-SDR.git
 
 ## System Overview
 
-
+| | |
 |---|---|
 | **SDR** | ADALM-PlutoSDR (integrated PA / LNA) — chirp generation and reception |
 | **Carrier** | 2.35 GHz |
@@ -26,31 +26,31 @@ https://github.com/Xiaozhang-code-cloud/Fish-Wan-plutosdr-fw-7020-SDR.git
 
 ![Range-Doppler map](Pics/RangeDoppler10Mhz.jpg)
 
-*Range-Doppler map produced by Python at 10 MHz bandwidth. I was walking towards the radar 20 meters away. Due to the small sample rate the range resolution is not very good. The strong signal at the 1m/s block in the first column indicates a target.* <
+Range-Doppler map produced by Python at 10 MHz bandwidth. I was walking towards the radar 20 meters away. Due to the small sample rate the range resolution is not very good. The strong signal at the 1m/s block in the first column indicates a target.
 
 
 ---
 
 ## Custom Yagi Antenna
 
-I designed the Yagi in **ANSYS HFSS**, fabricated it by hand, and verified it on a **VNA**. Measured performance agrees closely with simulation.
+I designed the Yagi in ANSYS HFSS, fabricated it by hand, and verified it on a VNA. Measured performance agrees closely with simulation.
 
-**Design (HFSS)**
+Design (HFSS)
 
 ![Yagi — HFSS model](Pics/yagi_hfss_model.png)
-*HFSS model of the Yagi, designed for 2.35 GHz.*
+HFSS model of the Yagi, designed for 2.35 GHz.
 
 ![Simulated S11](Pics/yagi_s11_sim.png)
-*Simulated S11: **−25 dB at 2.35 GHz**.*
+Simulated S11:−25 dB at 2.35 GHz.
 
 ![Simulated Gain](Pics/yagi_gain.png)
-**Build & measurement**
+Build & measurement
 
 ![Fabricated Yagi](Pics/yagi_photo.jpg)
-*The fabricated antenna.*
+The fabricated antenna.
 
 ![Measured S11 (VNA)](Pics/yagi_s11_measured.jpg)
-*Measured S11: **−20 dB at 2.35 GHz** on the VNA — close agreement with the simulated result.*
+Measured S11: −20 dB at 2.35 GHz on the VNA — close agreement with the simulated result.
 
 ---
 
@@ -59,16 +59,16 @@ I designed the Yagi in **ANSYS HFSS**, fabricated it by hand, and verified it on
 
 
 ![Circularly-polarized antenna](Pics/cp_antenna.jpg)
-*A commercial antenna. Since the reflected waves can be polarized in any directions, a circularly polarized antenna can maximize the signal.*
+A commercial antenna. Since the reflected waves can be polarized in any directions, a circularly polarized antenna can maximize the signal.
 
 ---
 
 ## How It Works
 
-1. **Chirp generation** — a linear-FM chirp is synthesized and transmitted through the PlutoSDR.
-2. **Reception** — the reflected signal is captured on the receive chain.
-3. **Dechirp** — the received signal is mixed with a reference chirp; the resulting beat frequency encodes target range.
-4. **Range-Doppler processing** — a range FFT, followed by a Doppler FFT across successive chirps, produces the range-Doppler map, giving both distance and velocity.
+1. Chirp generation — a linear-FM chirp is synthesized and transmitted through the PlutoSDR.
+2. Reception — the reflected signal is captured on the receive chain.
+3. Dechirp — the received signal is mixed with a reference chirp; the resulting beat frequency encodes target range.
+4. Range-Doppler processing — a range FFT, followed by a Doppler FFT across successive chirps, produces the range-Doppler map, giving both distance and velocity.
 
 ---
 
