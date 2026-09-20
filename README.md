@@ -80,5 +80,6 @@ Moving the dechirp from the host into the PlutoSDR's FPGA so the full bandwidth 
 
 ## Code
 
-[`v1-pc-dechirp/`](v1-pc-dechirp/) — the working PC-side-dechirp implementation used to produce the results above. See its README for setup and usage.
+- [`v1-pc-dechirp/`](v1-pc-dechirp/) — the working PC-side-dechirp implementation used to produce the results above.
+- [`v2-fpga-dechirp/`](v2-fpga-dechirp/) — the FPGA dechirp core described above: RTL written and passing its testbench in simulation, not yet integrated into a bitstream. See its README for status and details.
 
