@@ -76,4 +76,9 @@ A commercial antenna. Since the reflected waves can be polarized in any directio
 
 Moving the dechirp from the host into the PlutoSDR's FPGA so the full bandwidth can be processed on-board, working toward 60 MHz.
 
+---
+
+## Code
+
+[`v1-pc-dechirp/`](v1-pc-dechirp/) — the working PC-side-dechirp implementation used to produce the results above. See its README for setup and usage.
 
